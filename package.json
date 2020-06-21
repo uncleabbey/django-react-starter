@@ -1,0 +1,41 @@
+{
+  "name": "django-react-starter",
+  "version": "1.0.0",
+  "description": "A starter pack for django and react with routes",
+  "main": "index.js",
+  "scripts": {
+    "shell": "pipenv shell",
+    "test": "python project/manage.py test",
+    "startproject": "django-admin startproject",
+    "startapp": "python project/manage.py startapp",
+    "migration": "python manage.py makemigrations && python manage.py migrate",
+    "django": "python project/manage.py runserver",
+    "webpack": "webpack --mode development --watch ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js",
+    "start": "concurrently \"yarn run django\" \"yarn run webpack\" ",
+    "build": "webpack --mode production ./project/frontend/src/index.js --output ./project/frontend/static/frontend/main.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2",
+    "@babel/preset-react": "^7.10.1",
+    "babel-loader": "^8.1.0",
+    "babel-plugin-transform-class-properties": "^6.24.1",
+    "css-loader": "^3.6.0",
+    "file-loader": "^6.0.0",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.12",
+    "webpack-dev-server": "^3.11.0"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "concurrently": "^5.2.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0"
+  }
+}
